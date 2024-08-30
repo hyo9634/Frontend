@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello HTML!</title>
+</head>
+<body>
+    <script>
+        let numberSet = [1,2];
+        alert(numberSet);
+        alert(numberSet.concat ([3,4]));
+        //1,2,3,4,5,6
+        let numSetAll = numberSet.concat([3,4],[5,6]);
+        numSetAll.forEach(alert);
+        //인덱스출력
+        numSetAll.forEach((item,index,array) => {
+            alert('${item} is at index ${index} in ${array}');
+
+        }
+    );
+    </script>
+</body>
+</html>

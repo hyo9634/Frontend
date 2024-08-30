@@ -1,0 +1,27 @@
+<script>
+    //한페이지에서 여러 실행하려면 비동기처리를 해주어야하는데 자바스크립트는 싱글 스레드이기 떄문에 원칙상 불가
+    //sleep함수는 일정시간(deley)지난 후에 콜백함수(fun)를 호출한다.
+    //싱글스레드의 동기화 방식
+        function sleep(func, deley) {
+            const deleytime = Date.now() + deley; //Date.now는 현재 시간을 숫자(ms)로 반환해주는 역할
+
+            while(Date.now() < dalaytime);
+
+            fun();//원하는 시간이 지난다음에 fun을 호출하겠다
+
+        }
+
+
+        function fun1(){
+            console.log("I'm func1");}
+        
+        function fun2(){
+            console.log("I'm func2");}
+
+    sleep(fun1,3000);//3000후에 fun1을 실행하라
+    fun2();//바로 실행
+
+    //동기방식(synchronous) : 현재 실행중인 테스크가 종료할 때 까지 다음에 실행될 테스크가 대기하는 방식
+    //ex) sleep함수는 3초후에 fun1호출, fun2
+    //장점 : 실행 순서를 보장함, 단점 : 앞 테스크가 종료될 때까지 이후 테스크들이 blocking됨.
+    </script> 

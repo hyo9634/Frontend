@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello HTML!</title>
+</head>
+<body>
+    <script>
+        
+    /*문제2) 
+    2-1. I study, javaScript,right, now 5단어를 배열 keyword로 선언하고 생성하세요.
+    2-2. keyword에서 처음 두 개 단어를 삭제하세요.(공간까지)
+    2-3. 삭제완료 된 keyword 배열의 길이를 확인해주세요.*/
+
+        let keyword = ['I', 'study', 'javaScript','right','now'];
+        alert(keyword);
+        let removed = keyword.splice(0,2);
+        alert(keyword);
+        let update = keyword.splice(2,0,'I', 'play');
+        alert(keyword);
+
+        let unsigned = keyword.splice(-2,0,'lala','Ooops');//음수 인덱스를 사용하면 역순으로(뒤쪽)부터 참조함
+        alert(keyword);
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //이름은 John, 나이는 30, 회사는 ssginc 이 사람의 정보를 user객체로 생성
+        let user = {
+                sayHello(){alert("hello");},//함수객체라서 함수 넣을 수 있음.함수 프로퍼티
+                [Symbol("id")] :  12345,//symbol인 id를 넣겠다.심볼형 프로퍼티
+                notthing : undefined,//값이 undifind인 프로퍼티
+                //-> 무시함
+                name : 'john', 
+                age : 30,
+                isAdmin : false,
+                auth : ['user','teamleader'],
+                company : 'ssginc',
+                married : null
+        };
+
+        let meeting = {
+            title : "Coffee Prince younho",
+            room : {
+                age : 26,
+                isGirlfriend : false,
+                participants : ['천안','판교']
+            }
+        };
+        //=> 서버에게 전송해주기 위해 JSON으로 만들어주기 (JSON으로 파싱하기)
+        alert (JSON.stringify(meeting));
+        //=>서버에서도 JSON을 객체로 바꾸어서 전송 
+
+        let json = JSON.stringify(user);//JSON은 인터페이스
+        alert(user);
+        alert(typeof jsonUser);/* -> 문자열로 바뀌었다, 결집된 객체다. , 결과 :  undifind 
+        
+        외부에서 들어오는 객체는 모두 문자열(송수신되는 모든 데이터는 문자열이기 때문에 원하는 타입으로 바꿔야함)
+        자바스크립트에서 문자열을 사용할 때 '',"" 혼용해서 쓰임. JSon에서는 결집되어 묶였을 경우 "" 사용*/
+        
+        /*let user = {
+                "name" : "john", 
+                "age" : 30,
+                "isAdmin" : false,
+                "auth" : ["user","teamleader"],
+                "company" : "ssginc",
+                "married" : null
+        };*/
+        alert(JSON.stringify(1));//문자열이 아닌 그냥 숫자값
+        alert(JSON.stringify('test'));
+        alert(JSON.stringify(true));
+
+        alert(JSON.stringify(user));
+
+        //json데이터를 객체로
+        let numbers ="[0,1,2,3,4]";
+        alert(numbers);
+        numbers = JSON.parse(numbers); //인덱스객체로 바꾸어서
+        alert(numbers[1]);//1번만 출력
+
+    //w중첩객체 만들기
+        let userData1 = '{"name" : "Jhon", "friends" : ["용빈","성민","경민"]}'
+        alert(JSON.parse(userData1));
+        alert(userData1.name);
+
+
+
+    </script>
+    
+</body>
+</html>
